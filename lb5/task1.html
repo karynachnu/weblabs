@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Типи лампочок</title>
+  <style>
+    #lamp {
+      width: 100px;
+      height: 150px;
+      border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+      background-color: #333;
+      margin: 30px auto;
+      transition: background-color 0.5s, opacity 0.5s;
+    }
+    #lamp.on {
+      box-shadow: 0 0 30px 10px currentColor;
+    }
+    select, button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="lamp"></div>
+  <div style="text-align: center;">
+    <select id="lampType">
+      <option value="incandescent">Звичайна</option>
+      <option value="energySaving">Енергозберігаюча</option>
+      <option value="led">Світлодіодна</option>
+    </select>
+    <button id="toggleBtn">Увімкнути/Вимкнути</button>
+    <button id="brightnessBtn">Яскравість</button>
+  </div>
+
+  <script src="task1.js"></script>
+</body>
+</html>

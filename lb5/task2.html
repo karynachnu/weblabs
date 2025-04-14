@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світлофор</title>
+    <style>
+        .traffic-light {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+            background: black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .light {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            border-radius: 50%;
+            background: gray;
+            transition: background 0.5s;
+        }
+        .active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+    </div>
+    <p id="status">Червоний</p>
+    <button id="nextState">Наступний стан</button>
+    <button id="changeTime">Змінити час</button>
+    <script src="task2.js"></script>
+
+</body>
+</html>

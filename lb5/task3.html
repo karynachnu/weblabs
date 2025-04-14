@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дата та час</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .clock { font-size: 2em; margin: 20px; }
+        .timer { font-size: 1.5em; margin: 20px; }
+        .calendar-container { margin: 20px; }
+    </style>
+</head>
+<body>
+    <div class="clock" id="clock"></div>
+    <div class="timer" id="countdown"></div>
+    <button onclick="setTimer()">Встановити таймер</button>
+    
+    <div class="calendar-container">
+        <input type="month" id="calendar" onchange="updateBirthday()">
+        <p id="birthdayCountdown"></p>
+    </div>
+    
+    <script src="task3.js"></script>
+</body>
+</html>
