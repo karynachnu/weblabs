@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .todo-container {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .todo-input-wrapper {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    #todo-input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+    }
+
+    #add-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #28a745;
+      color: #fff;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #add-btn:hover {
+      background-color: #218838;
+    }
+
+    .sort-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .sort-buttons button {
+      flex: 1;
+      padding: 0.4rem;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .sort-buttons button:hover {
+      background: #0056b3;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .todo-item.completed .todo-text {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .todo-text {
+      flex: 1;
+      padding: 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .todo-actions button {
+      margin-left: 0.5rem;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-edit {
+      background-color: #ffc107;
+      color: #fff;
+    }
+
+    .btn-edit:hover {
+      background-color: #e0a800;
+    }
+
+    .btn-delete {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .btn-delete:hover {
+      background-color: #c82333;
+    }
+
+    @media (max-width: 600px) {
+      .todo-container {
+        padding: 1rem;
+      }
+
+      .sort-buttons {
+        flex-direction: column;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Мій список справ</h1>
+  <div class="todo-container">
+    <div class="todo-input-wrapper">
+      <input type="text" id="todo-input" placeholder="Нове завдання..." required>
+      <button id="add-btn">Додати</button>
+    </div>
+    <div class="sort-buttons">
+      <button data-sort="created">За датою</button>
+      <button data-sort="completed">За виконанням</button>
+      <button data-sort="updated">За оновленням</button>
+    </div>
+    <ul id="todo-list"></ul>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
