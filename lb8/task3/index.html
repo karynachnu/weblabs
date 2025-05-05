@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="board">
+    <div class="column todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2>To do</h2>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task9">Task 9</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task3">Task 3</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task5">Task 5</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task4">Task 4</div>
+    </div>
+
+    <div class="column working" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2>Working</h2>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task6">Task 6</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task8">Task 8</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task7">Task 7</div>
+    </div>
+
+    <div class="column done" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2>Done</h2>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task11">Task 11</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task2">Task 2</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task13">Task 13</div>
+      <div class="task" draggable="true" ondragstart="drag(event)" id="task14">Task 14</div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

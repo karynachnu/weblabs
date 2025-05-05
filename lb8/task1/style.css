@@ -1,0 +1,66 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .settings label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+  
+  .board {
+    display: grid;
+    grid-gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  #game {
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 80px;
+    height: 80px;
+    background-color: #eee;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  
+  
+  
+  .card.flipped {
+    background: #fff;
+    color: #000;
+    cursor: default;
+  }
+  
+  .controls {
+    margin-top: 1rem;
+  }
+  
