@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 10 - Користувачі</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="auth" class="container">
+    <div class="container">
+        <div class="tabs">
+            <div class="tab-item active" data-tab="login">Авторизація</div>
+            <div class="tab-item" data-tab="register">Реєстрація</div>
+        </div>
+        
+        <div class="form-container">
+            <!-- Форма авторизації -->
+            <form id="login-form" class="form active">
+                <h2>Увійти в акаунт</h2>
+                
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="username" placeholder="Введіть логін">
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="login-password" name="password" placeholder="Введіть пароль">
+                        <i class="toggle-password fa fa-eye-slash"></i>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="remember-me" name="remember">
+                    <label for="remember-me">Запам'ятати мене</label>
+                </div>
+                
+                <button type="submit" class="btn-submit">Увійти</button>
+            </form>
+            
+            <!-- Форма реєстрації -->
+            <form id="register-form" class="form">
+                <h2>Створити акаунт</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="firstName" placeholder="Введіть ім'я">
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="lastName" placeholder="Введіть прізвище">
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Введіть email">
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="register-password" name="password" placeholder="Введіть пароль">
+                        <i class="toggle-password fa fa-eye-slash"></i>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="password-container">
+                        <input type="password" id="confirm-password" name="confirmPassword" placeholder="Підтвердіть пароль">
+                        <i class="toggle-password fa fa-eye-slash"></i>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX">
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birth-date">Date of Birth</label>
+                    <input type="date" id="birth-date" name="birthDate">
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group radio-group">
+                    <label>Sex</label>
+                    <div class="radio-options">
+                        <input type="radio" id="male" name="sex" value="male">
+                        <label for="male">Male</label>
+                        
+                        <input type="radio" id="female" name="sex" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Оберіть країну</option>
+                            <option value="ukraine">Україна</option>
+                            <option value="poland">Польща</option>
+                            <option value="germany">Німеччина</option>
+                            <option value="usa">США</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <select id="city" name="city" disabled>
+                            <option value="">Спочатку оберіть країну</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">Зареєструватися</button>
+            </form>
+        </div>
+        
+        <div id="success-message" class="success-message">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Реєстрація успішна!</h3>
+                <p>Ваш обліковий запис успішно створено</p>
+                <button id="close-success">ОК</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="main-container" class="container" style="display: none;">
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="Пошук користувача..." />
+      <select id="sort-select">
+        <option value="name-asc">Ім'я (А-Я)</option>
+        <option value="name-desc">Ім'я (Я-А)</option>
+        <option value="age-asc">Вік (↑)</option>
+        <option value="age-desc">Вік (↓)</option>
+        <option value="date-asc">Дата реєстрації (↑)</option>
+        <option value="date-desc">Дата реєстрації (↓)</option>
+      </select>
+      <button id="logout-btn">Вийти</button>
+    </div>
+
+    <div id="error"></div>
+    <div id="user-list"></div>
+    <div id="pagination"></div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
