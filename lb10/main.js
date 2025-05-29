@@ -268,32 +268,10 @@ function initAuth(onSuccess) {
 
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        let isValid = true;
-        loginInputs.forEach(input => {
-            if (input.type !== 'checkbox' && !validateField(input)) {
-                isValid = false;
-            }
-        });
-        
-        if (isValid) {
-            const data = Object.fromEntries(new FormData(loginForm));
-            const saved = JSON.parse(localStorage.getItem("user"));
-            console.log(saved)
-            if (saved && saved.email === data.username) {
+
               onSuccess();
-            } else {
-              alert("Невірні дані"); // заміни на модальний або інший UI
-            }
-            loginForm.reset();
-            loginInputs.forEach(input => {
-                if (input.type !== 'checkbox') {
-                    input.classList.remove('valid', 'invalid');
-                }
-            });
             
-            alert('Авторизація успішна!');
-        }
+        
     });
 
     document.getElementById('close-success').addEventListener('click', function() {
